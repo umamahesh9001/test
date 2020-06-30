@@ -26,11 +26,16 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-<standaloneDeployment>
-<muleVersion>4.2.2</muleVersion>
-<muleHome>${mule.home}</muleHome>
-</standaloneDeployment>
-</configuration>
+				    <armDeployment>
+				      <muleVersion>${app.runtime}</muleVersion>
+				      <uri>https://anypoint.mulesoft.com</uri>
+				      <target>dev</target>
+				      <targetType>server</targetType>
+				      <username>mulesoft_user8</username>
+				      <password>Surya123</password>
+				      <environment>Sandbox</environment>
+				    </armDeployment>
+  				</configuration>
 			</plugin>
 		</plugins>
 	</build>
