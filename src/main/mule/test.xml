@@ -9,6 +9,14 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="testFlow" doc:id="9570475c-a75d-42aa-b118-faeeb219b77e" >
 		<http:listener doc:name="Listener" doc:id="4b2409fc-d1d1-45ea-ac3b-6e2f393f6515" config-ref="HTTP_Listener_config" path="/"/>
-		<logger level="INFO" doc:name="Logger" doc:id="200a8fa7-047f-48d6-ad5c-71b430a273ee" message="hi"/>
+		<set-variable value="#[attributes.queryParams.test as Number]" doc:name="Set Variable" doc:id="04a30077-1d4e-4807-bd31-8024132ada90" variableName="x"/>
+		<choice doc:name="Choice" doc:id="d9cc079d-c0db-4e5e-924b-a89ed343b0e0" >
+			<when expression="#[vars.x &gt; 5]">
+				<set-payload value="Hello you entered values greater than 5" doc:name="Set Payload" doc:id="24c20796-0e2c-426a-84b3-59fe24af5268" />
+			</when>
+			<otherwise >
+				<set-payload value="Hello you entered values less than or equal to 5" doc:name="Set Payload" doc:id="92fc294a-4c3e-4dcc-a82a-6c151aad98f8" />
+			</otherwise>
+		</choice>
 	</flow>
 </mule>
