@@ -11,7 +11,7 @@ pipeline
 	    {
 		     steps
 		     {
-		       mvn clean package
+		       bat 'mvn clean package'
 		     }
              }               
         }
