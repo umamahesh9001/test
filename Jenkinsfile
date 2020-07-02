@@ -21,13 +21,14 @@ pipeline
 		     {
 			  script {
 			       
-				   def mavenPOM = readMavenPom file : 'pom.xml'
+				   def mavenPOM = readMavenPom 'pom.xml'
 				   def nexusRepoName = mavenPOM.version.endsWith('SNAPSHOT') ? 'uca-snapshots' : 'uca-release'
+				   echo ${mavenPOM.version}
 				   nexusArtifactUploader artifacts : [
 					   [
 							artifactId : 'test',
 							classifier: '',
-							file: '/target/test-1.0.0-${mavenPOM.version}-mule-application.jar',
+							file: "/target/test-1.0.0-${mavenPOM.version}-mule-application.jar",
 							type: 'jar'
 					   ]
 				   ],
@@ -37,7 +38,7 @@ pipeline
 				   nexusVersion : 'nexus2',
 				   protocol : 'http',
 				   repository : nexusRepoName,
-				   version : '${mavenPOM.version}'
+				   version : "${mavenPOM.version}"
 				
 				}
 			   
