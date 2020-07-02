@@ -11,7 +11,7 @@ pipeline
 	    {
 		     steps
 		     {
-		       bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:\Mahesh\mule\mule'
+		       bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'
 		     }
              }               
         }
