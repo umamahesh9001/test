@@ -69,10 +69,10 @@
             <layout>default</layout>
         </repository>
     </repositories>
-	<distributionManagement>
+<distributionManagement>
   <repository>
-    <id>releases</id>
-    <url>http://localhost:8090/nexus/content/repositories/snapshots</url>
+    <id>uca-snapshots</id>
+    <url>http://localhost:8090/nexus/content/repositories/uca-snapshots</url>
   </repository>
 </distributionManagement>
     <pluginRepositories>
