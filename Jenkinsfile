@@ -11,7 +11,13 @@ pipeline
 	    {
 		    steps
 		     {
-		       bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'
+			     step {
+				     
+		                      bat cd "C:/Program Files (x86)/Jenkins/workspace"
+			     }
+			     step {
+				   'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'
+			     }
 		     }
         }
 
