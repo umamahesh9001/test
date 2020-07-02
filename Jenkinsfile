@@ -25,8 +25,8 @@ pipeline
 						classifier: '',
 						file: 'C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test-1.0.0-SNAPSHOT-mule-application.jar',
 						type: 'jar'
-				   ],
-			   ]
+				   ]
+			   ],
 			   credentialsId : 'nexus3',
 			   groupId : 'com.mycompany',
 			   nexusUrl : 'localhost:8090/nexus',
