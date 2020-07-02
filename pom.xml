@@ -5,7 +5,7 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>test</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>mule-application</packaging>
 
 	<name>test</name>
@@ -69,6 +69,12 @@
             <layout>default</layout>
         </repository>
     </repositories>
+	<distributionManagement>
+  <repository>
+    <id>releases</id>
+    <url>http://localhost:8090/nexus/content/repositories/releases</url>
+  </repository>
+</distributionManagement>
     <pluginRepositories>
         <pluginRepository>
             <id>mulesoft-releases</id>
