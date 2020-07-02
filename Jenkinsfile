@@ -23,7 +23,7 @@ pipeline
 				   [
 						artifactId : 'test',
 						classifier: '',
-						file: 'C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test-1.0.0-SNAPSHOT-mule-application.jar',
+						file: 'C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test.jar',
 						type: 'jar'
 				   ]
 			   ],
