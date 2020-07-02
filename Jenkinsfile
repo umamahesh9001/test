@@ -28,7 +28,7 @@ pipeline
 					   [
 							artifactId : 'test',
 							classifier: '',
-							file: "/target/test-${mavenPOM.version}-mule-application.jar",
+							file: "C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test-${mavenPOM.version}-mule-application.jar",
 							type: 'jar'
 					   ]
 				   ],
