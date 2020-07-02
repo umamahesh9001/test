@@ -7,11 +7,16 @@ pipeline
   }
   stages 
 	{
+		stage ('go to path') {
+			script {
+				bat 'cd C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline' 
+			}
+		}
         stage ('Compile and deploy to Mule Server') 
 	    {
 		    script
 		     {    
-			  bat 'cd C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline' ,
+			  
 			  bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'     
 		     }
         }
