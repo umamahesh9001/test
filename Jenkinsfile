@@ -28,7 +28,7 @@ pipeline
 					   [
 							artifactId : 'test',
 							classifier: '',
-							file: "/target/test-1.0.0-${mavenPOM.version}-mule-application.jar",
+							file: "/target/test-${mavenPOM.version}-mule-application.jar",
 							type: 'jar'
 					   ]
 				   ],
