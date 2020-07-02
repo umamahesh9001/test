@@ -23,7 +23,7 @@ pipeline
 				   [
 						artifactId : 'test',
 						classifier: '',
-						file: 'C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test-1.0.0-mule-application.jar',
+						file: 'C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test-1.0.0-SNAPSHOT-mule-application.jar',
 						type: 'jar'
 				   ]
 			   ],
@@ -32,7 +32,7 @@ pipeline
 			   nexusUrl : 'localhost:8090/nexus',
 			   nexusVersion : 'nexus2',
 			   protocol : 'http',
-			   repository : 'releases',
+			   repository : 'snapshots',
 			   version : '1.0.0'
 			   
 			   
