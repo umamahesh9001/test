@@ -8,13 +8,13 @@ pipeline
   stages 
 	{
 		stage ('go to path') {
-			script {
+			steps {
 				bat 'cd C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline' 
 			}
 		}
         stage ('Compile and deploy to Mule Server') 
 	    {
-		    script
+		    steps
 		     {    
 			  
 			  bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'     
