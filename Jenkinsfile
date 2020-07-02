@@ -27,7 +27,7 @@ pipeline
 						type: 'jar'
 				   ],
 			   ]
-			   credentialsId : 'nexusCred',
+			   credentialsId : 'nexus3',
 			   groupId : 'com.mycompany',
 			   nexusUrl : 'localhost:8090/nexus',
 			   nexusVersion : 'nexus2',
