@@ -7,22 +7,16 @@ pipeline
   }
   stages 
 	{
-		stage ('go to path') {
-			steps {
-				bat 'cd C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline' 
-			}
-		}
-        stage ('Compile and deploy to Mule Server') 
-	    {
+		stage ('Build and deploy to Mule Server') 
+	    	{
 		    steps
-		     {    
-			  
-			  bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'     
+		     {
+		       bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'
 		     }
-        }
+        	}
 
 		stage ('Publish the artifact to Nexus repository') 
-	    {
+	    	{
 		    steps
 		     {
 			  script {
@@ -35,7 +29,7 @@ pipeline
 					   [
 							artifactId : 'test',
 							classifier: '',
-						   file: "/target/test-${mavenPOM.version}-mule-application.jar",
+						   file: "C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test-${mavenPOM.version}-mule-application.jar",
 							type: 'jar'
 					   ]
 				   ],
