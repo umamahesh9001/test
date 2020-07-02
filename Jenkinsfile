@@ -23,7 +23,7 @@ pipeline
 			       
 				   def mavenPOM = readMavenPom 'pom.xml'
 				   def nexusRepoName = mavenPOM.version.endsWith('SNAPSHOT') ? 'uca-snapshots' : 'uca-release'
-				   echo ${mavenPOM.version}
+				   echo ${mavenPOM.version} , 
 				   nexusArtifactUploader artifacts : [
 					   [
 							artifactId : 'test',
