@@ -11,13 +11,13 @@ pipeline
 	    {
 		    steps
 		     {
-			     step {
+			     script {
 				     
-		                      bat cd "C:/Program Files (x86)/Jenkins/workspace"
-			     }
-			     step {
-				   'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'
-			     }
+		                      bat cd "C:/Program Files (x86)/Jenkins/workspace" ,
+			     
+			     
+				      'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'
+			     
 		     }
         }
 
