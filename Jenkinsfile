@@ -9,8 +9,9 @@ pipeline
 	{
         stage ('Compile and deploy to Mule Server') 
 	    {
-		    steps
+		    script
 		     {    
+			  bat 'cd C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline'
 			  bat 'mvn clean deploy -DmuleDeploy -Dmule.home=D:/Mahesh/mule/mule'     
 		     }
         }
@@ -23,13 +24,13 @@ pipeline
 			       
 				   def mavenPOM = readMavenPom file : 'pom.xml'
 				   def nexusRepoName = mavenPOM.version.endsWith('SNAPSHOT') ? 'uca-snapshots' : 'uca-release'
-				   def jenkinsPath = workspace
+				   // def jenkinsPath = workspace
 				   // echo ${mavenPOM.version} , 
 				   nexusArtifactUploader artifacts : [
 					   [
 							artifactId : 'test',
 							classifier: '',
-						   file: "${jenkinsPath}/practice_1_pipeline/target/test-${mavenPOM.version}-mule-application.jar",
+						   file: "/target/test-${mavenPOM.version}-mule-application.jar",
 							type: 'jar'
 					   ]
 				   ],
