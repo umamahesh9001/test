@@ -19,11 +19,13 @@ pipeline
 	    {
 		    steps
 		     {
+			   def mavenPOM = readMavenPom file : 'pom.xml'
+			   def nexusRepoName = mavenPOM.version.endsWith("SNAPSHOT") ? "uca-snapshots" : "uca-release"
 		       nexusArtifactUploader artifacts : [
 				   [
 						artifactId : 'test',
 						classifier: '',
-						file: 'C:/Program Files (x86)/Jenkins/workspace/practice_1_pipeline/target/test-1.0.0-SNAPSHOT-mule-application.jar',
+						file: '/target/test-1.0.0-${mavenPOM.version}-mule-application.jar',
 						type: 'jar'
 				   ]
 			   ],
@@ -32,8 +34,8 @@ pipeline
 			   nexusUrl : 'localhost:8090/nexus',
 			   nexusVersion : 'nexus2',
 			   protocol : 'http',
-			   repository : 'snapshots',
-			   version : '1.0.0'
+			   repository : nexusRepoName,
+			   version : '${mavenPOM.version}'
 			   
 			   
 		     }
