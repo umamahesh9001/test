@@ -32,7 +32,7 @@ pipeline
 			   nexusUrl : 'localhost:8090/nexus',
 			   nexusVersion : 'nexus2',
 			   protocol : 'http',
-			   repository : 'http://localhost:8090/nexus/content/repositories/releases/',
+			   repository : 'http://localhost:8090/nexus/content/repositories/releases',
 			   version : '1.0.0'
 			   
 			   
