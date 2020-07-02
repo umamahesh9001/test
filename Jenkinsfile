@@ -19,10 +19,9 @@ pipeline
 	    {
 		    steps
 		     {
-			   step 
-			   {
-				   def mavenPOM = readMavenPom file : 'pom.xml'
-				   def nexusRepoName = mavenPOM.version.endsWith("SNAPSHOT") ? "uca-snapshots" : "uca-release"
+			   
+				   def mavenPOM = readMavenPom 'pom.xml'
+				   def nexusRepoName = mavenPOM.version.endsWith('SNAPSHOT') ? 'uca-snapshots' : 'uca-release'
 				   nexusArtifactUploader artifacts : [
 					   [
 							artifactId : 'test',
@@ -38,7 +37,7 @@ pipeline
 				   protocol : 'http',
 				   repository : nexusRepoName,
 				   version : '${mavenPOM.version}'
-				}
+				
 			   
 			   
 		     }
